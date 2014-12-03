@@ -1,66 +1,45 @@
-Using the JavaScript language, h
-ave the function ArithGeo(arr) take the array of numbers stored in arr 
+<!DOCTYPE html>
+<body>
+Using the JavaScript language, 
+have the function ArithGeo(arr) take the array of numbers stored in arr 
 
 return the string "Arithmetic" if the sequence follows an arithmetic pattern or 
 return "Geometric" if it follows a geometric pattern. 
+<script>
 
-If the sequence doesn't follow either pattern 
+	// arr is an array of number
+	var arith = [5, 10, 15];
+var geo = [2, 6, 18, 54];
+var nun = [2, 4, 16, 24];
+var hun = [100, 200, 400, 800, 1600];
 
-return -1. 
+function ArithGeo(arr) {
+    var diff0 = 0,
+        diff1 = 0,
+        diffY = 0,
+        diffZ = 0;
+    
+    diff0 = Math.abs(arr[1] - arr[0]);
+    diff1 = Math.abs(arr[2] - arr[1]);
+    diffY = Math.abs(arr[arr.length-2] - arr[arr.length-3]);
+    diffZ = Math.abs(arr[arr.length - 1] - arr[arr.length - 2]);
+        
+    console.log('diff0, diff1, diffY, diffZ: ' + diff0, diff1, diffY, diffZ);
+    if ( diffZ == diff1 ) {
+        // this should be arithmetic
+        return "Arithmetic";
+    } else if ( ((diffZ / diffY) == (diff1 / diff0)) && (( diffZ / diff1 ) > 1) ) 
+    {
+        return "Geometric";    
+    }
+    else { return -1; }  
+}
 
+console.log(ArithGeo(arith));
+console.log(ArithGeo(geo));
+console.log(ArithGeo(nun));
+console.log(ArithGeo(hun));
 
-if (this express evalutes arithmetic)
-//  An arithmetic sequence is one where the difference between each of the numbers is consistent,
-Arithmetic example: [2, 4, 6, 8] 
-
-else if (if (this express evalutes geometric)
-// each term after the first 
-// multiplied by some common ratio.
-Geometric example: [2, 6, 18, 54]
-
-else (neither of the above is true)
-
-return -1
-
-parameters 
-Negative numbers may be entered 
-0 will not be entered
-no array will contain all the same elements
-
-
-Array methods
-
-Array.concat
-Array.contains
-Array.copyWithin
-Array.entries
-Array.every
-Array.fill
-Array.filter
-Array.find
-Array.findIndex
-Array.forEach
-Array.from
-Array.indexOf
-Array.isArray
-Array.join
-Array.keys
-Array.lastIndexOf
-Array.length
-Array.map
-Array.pop
-Array.prototype
-Array.push
-Array.reduce
-Array.reduceRight
-Array.reverse
-Array.shift
-Array.slice
-Array.some
-Array.sort
-Array.splice
-Array.toLocaleString
-Array.toString
-Array.unshift
-Array.values
-
+</script>
+</body>
+</html>
