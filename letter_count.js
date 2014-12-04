@@ -23,21 +23,15 @@ function LetterCountI(str) {
         accounting.push([words[i], repeats]);
     } // for
     // process accounting
-    console.log(accounting);
-    var mostRepeats = 0;
+    var mostRepeats = 1;
     for (var j = 0; j < accounting.length; j++) {
         
-        console.log('accounting[j][1]: ' + accounting[j]);
+   
         if (accounting[j][1] > mostRepeats) {
             mostRepeats = accounting[j][1];
              winner = accounting[j][0];
-        }
-  } // for 
+        } 
+  } // for
+    winner = (mostRepeats > 1 ? winner : -1);
     return winner;
 }
-
-
-var str = "Today, is the greatetst day ever!";
-
-    
-console.log(LetterCountI(str));
